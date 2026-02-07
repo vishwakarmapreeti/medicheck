@@ -1,0 +1,88 @@
+/* Card container */
+.card {
+  background: linear-gradient(135deg, #f0fdfc 0%, #ffffff 100%);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 25px rgba(13, 148, 136, 0.15);
+  border: 1px solid rgba(13, 148, 136, 0.2);
+}
+
+/* Title */
+.card h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0D9488;
+  margin-bottom: 20px;
+}
+
+/* Upload area */
+.upload-area {
+  border: 3px dashed #0D9488;
+  border-radius: 14px;
+  padding: 50px 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0D9488;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.upload-area:hover {
+  background: #ffffff;
+  transform: scale(1.01);
+  border-color: #0891B2;
+  box-shadow: 0 4px 16px rgba(13, 148, 136, 0.2);
+}
+
+/* Drag active */
+.upload-area.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Hint text */
+.format-hint {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #0D9488;
+  opacity: 0.8;
+}
+
+/* Preview box */
+.preview {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  max-height: 180px;
+  overflow-y: auto;
+  font-size: 13px;
+  color: #333;
+  border: 1px solid rgba(13, 148, 136, 0.15);
+}
+
+/* Error message (already inline styled but improve consistency) */
+.upload-error {
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  color: #991b1b;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    padding: 20px;
+  }
+
+  .upload-area {
+    padding: 36px 16px;
+    font-size: 16px;
+  }
+}

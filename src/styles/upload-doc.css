@@ -75,6 +75,57 @@
   font-size: 14px;
 }
 
+.upload-area {
+  border: 2px dashed #0D9488;
+  background: #c3defe;
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.upload-area:hover {
+  background: #d7e8ff;
+}
+
+.upload-area.loading {
+  cursor: not-allowed;
+  background: #eef3ff;
+  border-color: #999;
+}
+
+.processing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid #c3defe;
+  border-top: 4px solid #0D9488;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  margin-top: 12px;
+  color: #b91c1c;
+  font-size: 14px;
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .card {

@@ -5,6 +5,7 @@ export interface DealerInformation {
   email: string;
   gstin: string;
   drugLicense: string;
+  grandTotal:number;
 }
 
 export interface PatientInformation {
@@ -26,7 +27,9 @@ export interface InvoiceItem {
   batch: string;
   mfg: string;
   mrp: number;
+  exp:string;
   rate: number;
+  dis:number;
   sgst: number;
   cgst: number;
   total: number;

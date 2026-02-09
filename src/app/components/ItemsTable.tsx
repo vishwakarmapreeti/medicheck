@@ -9,9 +9,7 @@ export default function ItemsTable({ items }: any) {
                 <thead>
                     <tr>
                         <th>S.N</th>
-
                         <th>HSN</th>
-
                         <th>Product Name</th>
                         <th>Pack</th>
                         <th>Qty</th>
@@ -21,12 +19,14 @@ export default function ItemsTable({ items }: any) {
                         <th>EXP</th>
                         <th>MRP</th>
                         <th>Rate</th>
-
                         <th>Dis</th>
                         <th>SGST</th>
-                        <th>SGST Value</th>
+                        <th>Value</th>
                         <th>CGST</th>
-                        <th>CGST Value</th>
+                        <th>Value</th>
+                        <th>Total</th>
+                        <th>Total(+GST)</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -42,21 +42,21 @@ export default function ItemsTable({ items }: any) {
                             <td>{item.qty}</td>
                             <td>{item.free}</td>
                             <td>{item.batch}</td>
-                            <td>{item.mfg}</td>
+                            <td>{item.mrp}</td>
                             <td>{item.exp}</td>
 
-
-
-
+                            <td>₹{item.mrp}</td>
                             <td>₹{item.rate}</td>
                             <td>{item.dis}</td>
+
                             <td>{item.sgst}</td>
-                            <td>{item.sgstValue}</td>
+                            <td>{item.total}</td>
                             <td>{item.cgst}</td>
-                            <td>{item.cgstValue}</td>
+                            <td>{item.total}</td>
 
 
-                            <td>₹{item.total}</td>
+                            <td>₹{(item.qty * item.rate)}</td>
+                            <td>₹{(item.qty * item.rate) +2*item.total}</td>
                         </tr>
                     ))}
                 </tbody>

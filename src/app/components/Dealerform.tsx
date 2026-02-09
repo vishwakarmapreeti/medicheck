@@ -13,10 +13,12 @@ export default function DealerForm({ dealer }: any) {
         <Field label="Phone" value={dealer.phone} />
         <Field label="Email" value={dealer.email} />
         <Field label="GSTIN" value={dealer.gstin} />
+        <Field label="Address" value={dealer.address} />
+        <Field label="Grand Total" value={dealer.grandTotal} />
+        
       </div>
 
       <div className="dealer-full">
-        <Field label="Address" value={dealer.address} />
       </div>
     </section>
   );

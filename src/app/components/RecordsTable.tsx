@@ -24,6 +24,8 @@ export default function RecordsList({
 
   const router = useRouter();
 
+console.log("😊😊records:", records);
+
 
   const filteredRecords = useMemo(() => {
     return records.filter((record) => {
@@ -107,7 +109,7 @@ export default function RecordsList({
               <th>Email</th>
               <th>Invoice No.</th>
               <th>Invoice Date</th>
-              <th>Total</th>
+    
               <th>Actions</th>
             </tr>
           </thead>
@@ -135,7 +137,7 @@ export default function RecordsList({
                   <td className="cell-email">{record.patientInformation?.email}</td>
                   <td className="cell-invoice">{record.patientInformation?.invoiceNo}</td>
                   <td className="cell-date">{record.patientInformation?.invoiceDate}</td>
-                  <td className="cell-total">₹{record.total || 0}</td>
+
                   <td className="cell-actions">
                     <button
                       className="btn-view"

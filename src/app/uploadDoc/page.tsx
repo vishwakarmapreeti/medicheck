@@ -32,21 +32,24 @@ const [previewText, setPreviewText] = useState("");
     router.push("/");
   }
 
-function handlePdfProcessed(text: string, extractedItems: any[]) {
-  setInvoice((prev) => ({
-    ...prev,
-    items: extractedItems, // ✅ fill items table automatically
-  }));
+function handlePdfProcessed(invoiceJson: any) {
+  setInvoice({
+    patientInformation: invoiceJson.patientInformation || {},
+    dealerInformation: invoiceJson.dealerInformation || {},
+    items: invoiceJson.items || [],
+  });
 }
 
 
-    /* RUN button fills data */
-  async function handleRun() {
-    const res = await fetch("/api/invoice");
-    const json = await res.json();
 
-    setInvoice(json.data);
-  }
+
+    /* RUN button fills data */
+//   async function handleRun() {
+//     const res = await fetch("/api/invoice");
+//     const json = await res.json();
+
+//     setInvoice(json.data);
+//   }
 
   return (
     <>
@@ -59,9 +62,10 @@ function handlePdfProcessed(text: string, extractedItems: any[]) {
       previewText={previewText}
       setPreviewText={setPreviewText}
     />
-      <button onClick={handleRun} className="run-btn">
-        RUN
-      </button>
+
+      {/* <button onClick={handleRun} className="run-btn">
+        RUN AI
+      </button> */}
       <PatientForm patient={invoice.patientInformation} />
       <DealerForm dealer={invoice.dealerInformation} />
       <ItemsTable items={invoice.items} />
